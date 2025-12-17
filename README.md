@@ -10,4 +10,4 @@
   >>> APACHE | 컨테이너 미정
 > > > 
  >> DB:
- MariaDB 
+  >>> MariaDB 
