@@ -8,5 +8,6 @@
 > > > 
  >> 웹서버 :
   >>> APACHE | 컨테이너 미정
+> > > 
  >> DB:
-> > > MariaDB 
+ MariaDB 
