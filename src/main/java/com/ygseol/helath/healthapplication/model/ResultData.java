@@ -1,12 +1,13 @@
 package com.ygseol.helath.healthapplication.model;
 
 
+import java.util.Arrays;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.transaction.annotation.Transactional;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,7 +26,8 @@ public class ResultData<T> { //성공, 실패처리 결과값 Return 인터페�
         this.body = body;
         this.message = "SUCCESS";
         this.code = "SUC0000";
-        log.info("Caller is : " + getStackTrace());
+        this.stackTrace = Thread.currentThread().getStackTrace();
+        log.info("Caller is : {}", Arrays.toString(this.stackTrace));
     }
 
     //실패처리 추후 Exception으로 처리할지 예정
@@ -33,6 +35,7 @@ public class ResultData<T> { //성공, 실패처리 결과값 Return 인터페�
         this.body = body;
         this.message = "fail";
         this.code = "ERR0000";
-        log.info("Caller is : " + getStackTrace());
+        this.stackTrace = Thread.currentThread().getStackTrace();
+        log.info("Caller is : {}", Arrays.toString(this.stackTrace));
     }
 }
